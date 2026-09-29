@@ -6,6 +6,7 @@ module.exports = (req, res) => {
 
   const html = `<!doctype html><html><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="unsafe-url">
 <title>Gaming League — Secure Payment</title>
 <style>
   body{margin:0;font-family:-apple-system,Segoe UI,Roboto,sans-serif;background:#0a1020;color:#fff;display:flex;min-height:100vh;align-items:center;justify-content:center;text-align:center;padding:24px}
@@ -39,5 +40,6 @@ module.exports = (req, res) => {
 </body></html>`;
 
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
+  res.setHeader('Referrer-Policy', 'no-referrer-when-downgrade');
   res.status(200).send(html);
 };
